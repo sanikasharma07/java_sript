@@ -23,3 +23,7 @@ console.log(booleanof);// gives false
 //converting any string "Sanika"-> true
 
 
+
+//**************operations **************//
+
+
