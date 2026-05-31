@@ -36,3 +36,7 @@ myCoding.forEach( (item) => {
     
     console.log(item.languageName);
 } )
+const myvalue=myCoding.forEach((items)=>{
+    console.log(items)
+})
+console.log(myvalue)// this will give undefined as foreach loop dosent returns anything
