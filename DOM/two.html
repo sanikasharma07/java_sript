@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="color: white;background-color:rgb(42, 4, 4);">
+    <div class="parent">
+    <div  class="day">monday</div>
+    <div class="day">tuesday</div>
+    <div class="day">wednesday</div>
+    </div>
+</body>
+<script>
+    const parent=document.querySelector('.parent');
+    console.log(parent);
+     console.log(parent.children);  //collectionhtml
+      // console.log(parent.children[1].innerHTML);// monday
+
+    // for (let i = 0; i < parent.children.length; i++) {
+    //      console.log(parent.children[i].innerHTML);// [0] is parent itself
+        
+    // }
+       const dayOne = document.querySelector('.day')// this will give 1st elemrnt with class=day
+    // console.log(dayOne);-> monday
+    // console.log(dayOne.parentElement); // if we want to access parent element from child
+    // console.log(dayOne.nextElementSibling);// next element with class=day after dayone element
+    console.log("Nodes:",parents.childNodes);
+    
+
+</script>
+</html>

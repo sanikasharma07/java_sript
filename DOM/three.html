@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  style="color: white;background-color:rgb(42, 4, 4);">
+    
+</body>
+<script>
+    // how to create a new element in dom
+    const divs=document.createElement('div')
+    console.log(divs)
+    divs.className="title"
+    divs.id='123'
+    divs.innerText="hello how are you?"
+    // or we can do const add text=document.createTextNode("hello")
+    // div.appendchild(addtext)
+document.body.appendChild(divs)
+
+
+</script>
+</html>
