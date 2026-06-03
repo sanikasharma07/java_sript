@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+     // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // }
+// this method give you less features
+   const owl= document.getElementById('owl')
+    owl.addEventListener('click',function(e){
+        e.stopPropagation();// if event listener is also applied on outside element it block it and only specific event listener of innner element will propogate
+        alert("owl")
+    },false)// this false here is for event propogation-bubbling(false)->(here we go inside to outside that is on click inside event will occour first ) or event capturing(true)
+
+
+    // other ways
+// attachEvent()
+// jQuery-on
+// type->What kind of event happened event.type
+// timestamp->When the event happened (ms since page loaded)
+//event.preventDefault();
+//target = the person you actually hit with a ball- where you clicked
+//currentTarget = the wall you were aiming at- where event listener is there
+ // clientX-Y position relative to visible screen
+//     screenX, screenY - Position relative to entire screen
+// Keyboard modifiers
+// These are boolean flags:
+// altKey
+// ctrlKey
+// shiftKey 
+
+
+
+// image should become invisible when i click it
+document.querySelector('#images').addEventListener('click',function(e){
+    
+    if(e.target.tagName==='IMG'){
+    e.target.parentNode.remove()
+    }
+
+    // now here since i am using target,it will also remove whole ul if i click on any list
+
+
+})
+
+
+    
+    </script>
+   </html> 
