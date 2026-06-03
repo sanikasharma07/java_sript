@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ticktick</title>
+</head>
+<body>
+    <h1>sanika</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+const saydate=function(){
+    console.log("sanika",Date.now());
+}
+let t;
+//hi will be printed in the func so setinterval also has a 3 parameter just give a varibale in function()
+const start=document.querySelector('#start').addEventListener('click',function(){
+    if(t==null)
+t=setInterval(saydate,1000);
+})
+
+//setInterval(saydate,1000,'hi');// a function is repeated after a certain time in ms
+const stop=document.querySelector('#stop').addEventListener('click',function(){
+   clearInterval(t);
+   t=null;
+})
+</script>
+</html>
