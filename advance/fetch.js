@@ -1,0 +1,2 @@
+//  if in a promise we get error 404 then it is as a response not as reject cause we only get reject when we are not able to request info at the first place
+// in event loop,the priority queue happens to have only fetch function and its prority is more than any function 
