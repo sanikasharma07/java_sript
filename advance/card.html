@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+
+<body style="
+  background-color:#414141;
+  color:aliceblue;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:400vh;
+  margin:0;
+">
+
+  <header style="
+    width:400px;
+    height:500px;
+    background-color:aqua;
+    padding:20px;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+  ">
+
+    <button class="button" style="
+      background-color:white;
+      color:black;
+      padding:8px 12px;
+      border:none;
+      cursor:pointer;
+    ">
+      Get Information
+    </button>
+
+    <div class="image"></div>
+    <div class="followers"></div>
+
+  </header>
+
+</body>
+<script>
+   const image=document.querySelector('.image')
+   const scr=document.createElement('img')
+   const followers=document.querySelector('.followers')
+   followers.style.color="black"
+   const start=document.querySelector('.button')
+    start.addEventListener('click',function(){
+        const requesturl="https://api.github.com/users/sanikasharma07"
+        const xhr=new XMLHttpRequest();
+        xhr.open('GET',requesturl)
+        xhr.send()
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState===4){
+                const info=JSON.parse(this.responseText)
+                  start.remove();
+                scr.src=info.avatar_url
+                scr.style.width = "150px";
+                image.appendChild(scr)
+               followers.innerHTML = `Followers: ${info.followers}`;
+                document.header.appendChild(followers)
+            }
+        }
+    })
+    </script>
+   </html> 
