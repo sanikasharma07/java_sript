@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button></button>
+</body>
+<script>
+   class React {
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            //requirement
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this))// this will bind the context of this to the handleClick function so that it can access the server variable and other variables of the class
+
+        }
+        handleClick(){
+            console.log("button clicked");
+            console.log(this.server);// this will not work here as this is not sure about the context although it has reference of button it still is not able to accesss server 
+        }
+    } 
+</script>
+</html>
