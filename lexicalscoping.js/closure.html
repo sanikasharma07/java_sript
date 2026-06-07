@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head >
+<body style="background-color: black; color: white;">
+    <button class="Green"> Green</button>
+    <button class="Orange"> Orange</button>
+</body>
+</head>
+<script>
+    // function init() {
+    // //     let name = "Mozilla"; 
+    // //     function displayName() {
+    // //         console.log(name); 
+    // //     }
+    // //     displayName();// display name will get access of all the variables in the outer function .This is lexixal scoping.
+    // // }
+    // // init();
+    
+    // function outer(){
+    //     let username = "hitesh"
+    
+    //     function inner(){
+    //         let secret = "my123"
+    //         console.log("inner", username);
+    //     }
+    //     function innerTwo(){
+    //         console.log("innerTwo", username);
+    //         console.log(secret);// this will give error because secret is not defined in this function and it is not in the outer function as well. It is only defined in the inner function.
+    //      }
+    //          console.log("OUTER", secret);// this will not get access of secret because it is defined in the inner function and outer function does not have access to the variables defined in the inner function. It only has access to the variables defined in the outer function and global scope.
+    //`     }
+    //     inner()
+    //     innerTwo()
+
+    
+    // function makeFunc() {
+    //     const name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName;// when you return a function,whole lexical scope of that funtion is returned.
+    // }
+
+    // const myFunc = makeFunc();
+    // myFunc();// here since we are returning only the inner func it dosent mean that outer function hence executed inst valid.Due to lexical scoping outer func is also valid.
+</script>
+<script>
+// lets say when we click on the green button we want to change the background color to green and when we click on the orange button we want to change the background color to orange. We can do this using closures.
+// so we will create a function for this
+function clickHandler(color){
+    return function(){
+        document.body.style.backgroundColor =`${color}`;
+    }// here is is imp to return a function otherwise the color change will be executed immedeately
+}
+greenBtn = document.querySelector(".Green");
+orangeBtn = document.querySelector(".Orange");
+greenBtn.addEventListener("click",clickHandler("green"));
+orangeBtn.addEventListener("click",clickHandler("orange"));
+
+</script>
+</html>
